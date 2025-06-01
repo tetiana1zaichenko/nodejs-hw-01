@@ -8,9 +8,10 @@ const generateContacts = async (number) => {
 
     for (let i = 0; i < number; i++) {
       const contact = await createFakeContact();
-      return allContacts.push(contact);
+      allContacts.push(contact);
     }
     await writeContacts(allContacts);
+    console.log(`${number} контакт(ів) додано.`);
   } catch (error) {
     console.log('помилка', error.message);
   }
